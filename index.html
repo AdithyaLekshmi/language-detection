@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Prediction</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://www.wallpapertip.com/wmimgs/248-2485090_book-wallpapers-book-wallpaper-hd.jpg') fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        
+        h1 {
+            text-align: center;
+            padding: 50px 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            margin: 0;
+        }
+        
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: hsla(17, 65%, 71%, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 24px;
+            color:Black;
+            font-weight:Bold;
+
+    
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 20px;
+            font-family:Bell MT;
+        }
+        
+        input[type="submit"] {
+            background-color: #27ae60;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #219d54;
+        }
+        
+        h3 {
+            margin-top: 20px;
+            color: #333;
+            font-size: 22px;
+            text-align: center;
+        }
+        
+        
+        
+    </style>
+</head>
+
+<body>
+    <h1>Language Prediction</h1>
+
+    
+    <form method="POST" action="/predict">
+        <label for="user_input">Enter Text:</label>
+        <textarea id="user_input" name="user_input" rows="4" cols="50"></textarea>
+        <br>
+        <CENTER>
+        <input type="submit" value="Predict"></CENTER>
+        <br>
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+    </form>
+
+</body>
+</html>
